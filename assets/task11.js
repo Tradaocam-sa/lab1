@@ -10,23 +10,15 @@ function openTab(event, tabName) {
 
 }
 
-const popup = document.querySelector("panelRight");
+const closeButton = document.getElementById("close-button");
+const popup = document.querySelector(".modal img");
 const modalOpen = document.querySelectorAll(".image img");
 for (let i = 0; i < modalOpen.length; i++) {
   const thumbnail = modalOpen[i].getAttribute("src");
   modalOpen[i].addEventListener("click", function () {
     console.log(thumbnail);
-    let htmls = `
-    <div id="modal" class="modal">
-    <div class="modal-content">
-      <span id="close-button" class="close-button">&times;</span>
-      <div class="image">
-        <img src="${thumbnail}">
-      </div>
-    </div>
-     </div>
-    `;
-  popup.innerHTML = htmls.join("");   
+    popup.setAttribute("src", thumbnail);
+    popup.style.display = "block";
   })
   
 }
