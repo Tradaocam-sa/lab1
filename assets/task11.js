@@ -9,13 +9,26 @@ function openTab(event, tabName) {
   console.log(event)
 
 }
-    
-  
-const modalOpen = document.querySelectorAll(".containerImage .image");
+
+const popup = document.querySelector("panelRight");
+const modalOpen = document.querySelectorAll(".image img");
 for (let i = 0; i < modalOpen.length; i++) {
-modalOpen.addEventListenner("click", function (){
-  modalOpen.background-image
-})
+  const thumbnail = modalOpen[i].getAttribute("src");
+  modalOpen[i].addEventListener("click", function () {
+    console.log(thumbnail);
+    let htmls = `
+    <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-button" class="close-button">&times;</span>
+      <div class="image">
+        <img src="${thumbnail}">
+      </div>
+    </div>
+     </div>
+    `;
+  popup.innerHTML = htmls.join("");   
+  })
+  
 }
 
 
