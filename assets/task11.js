@@ -11,14 +11,16 @@ function openTab(event, tabName) {
 }
 
 const closeButton = document.getElementById("close-button");
-const popup = document.querySelector(".modal img");
+const popup = document.querySelector(".modal .container-img img");
+const showModal = document.querySelector(".modal")
 const modalOpen = document.querySelectorAll(".image img");
 for (let i = 0; i < modalOpen.length; i++) {
   const thumbnail = modalOpen[i].getAttribute("src");
   modalOpen[i].addEventListener("click", function () {
     console.log(thumbnail);
+    showModal.classList.add("show");
     popup.setAttribute("src", thumbnail);
-    popup.style.display = "block";
+    
   })
   
 }
