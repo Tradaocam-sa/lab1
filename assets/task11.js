@@ -19,10 +19,15 @@ for (let i = 0; i < modalOpen.length; i++) {
   modalOpen[i].addEventListener("click", function () {
     console.log(thumbnail);
     showModal.classList.add("show");
-    popup.setAttribute("src", thumbnail);
+    popup.setAttribute("src",thumbnail);
     
   })
+  closeButton.addEventListener("click", function () {
+    showModal.classList.remove("show");
+  });
   
 }
+
+
 
 
